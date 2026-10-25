@@ -5,44 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raily AI Assistant</title>
     <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3b82f6">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background-color: #0b0f19;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
         }
-        h2 {
-            margin-bottom: 20px;
+        .container {
+            padding: 20px;
         }
-        #call-btn {
-            background-color: #6366f1;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        h1 {
+            color: #3b82f6;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #9ca3af;
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Raily AI Assistant</h1>
+        <p>अपने पर्सनल एआई असिस्टेंट से बात करने के लिए ऐप</p>
+    </div>
 
-    <h2>Raily AI Assistant</h2>
-    <button id="call-btn">Start Talking</button>
-
-    <!-- Vapi AI Web SDK Script -->
+    <!-- Vapi AI Embed Script -->
     <script>
       var vapiInstance = null;
-      const apiKey = "4ae16b0e-df04-4b49-b32f-3eaa4eb556ee";
       const assistantId = "51cefda8-3673-4f6d-9696-e07c1392acb9";
-
+      const apiKey = "4ae16b0e-df04-4b49-b32f-3eaa4eb556ee";
+      
+      // Vapi Loader Script
       (function (d, t) {
         var g = d.createElement(t),
             s = d.getElementsByTagName(t)[0];
@@ -56,14 +57,21 @@
             apiKey: apiKey,
             assistant: assistantId,
             config: {
-              buttonColor: "#6366f1",
               position: "bottom-right",
-              title: "Raily",
+              offset: "40px",
+              width: "50px",
+              height: "50px",
+              idle: {
+                color: "rgb(59, 130, 246)",
+                type: "pill",
+                title: "Raily AI से बात करें",
+                subtitle: "टैप करें",
+                icon: "https://unpkg.com/lucide-static@latest/icons/mic.svg"
+              }
             }
           });
         };
       })(document, "script");
     </script>
-
 </body>
 </html>
