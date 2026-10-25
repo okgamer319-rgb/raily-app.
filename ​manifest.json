@@ -1,13 +1,16 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
   "name": "Raily AI Assistant",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "Raily",
-  "start_url": "/",
-  "theme_color": "#ffffff",
-  "id": "com.raily.aiassistant",
-  "description": "Raily AI Assistant - अपने पर्सनल एआई असिस्टेंट से आसानी से बात करने के लिए ऐप"
+  "start_url": "/raily-app/",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#3b82f6",
+  "description": "Raily AI Assistant - अपने पर्सनल एआई असिस्टेंट से बात करने के लिए ऐप",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/4712/4712109.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
