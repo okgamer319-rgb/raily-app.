@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raily AI Assistant</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        #call-btn {
+            background-color: #6366f1;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Raily AI Assistant</h2>
+    <button id="call-btn">Start Talking</button>
+
+    <!-- Vapi AI Web SDK Script -->
+    <script>
+      var vapiInstance = null;
+      const apiKey = "4ae16b0e-df04-4b49-b32f-3eaa4eb556ee";
+      const assistantId = "51cefda8-3673-4f6d-9696-e07c1392acb9";
+
+      (function (d, t) {
+        var g = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+
+        g.onload = function () {
+          window.vapiSDK.run({
+            apiKey: apiKey,
+            assistant: assistantId,
+            config: {
+              buttonColor: "#6366f1",
+              position: "bottom-right",
+              title: "Raily",
+            }
+          });
+        };
+      })(document, "script");
+    </script>
+
+</body>
+</html>
